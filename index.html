@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: black;
+            margin:0%;
+            padding:0%;
+        }
+        .container{
+            margin: 100px 80px 120px 80px;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .part{
+            display: flex;
+            align-items: center;
+            margin-top: 1.5em;
+        }
+        img {
+            display: block;
+            width: 30%;
+            height: 10%;
+        }
+        .titleScript{
+            color:white;
+            font-style: italic;
+            font-size: 1.5em;
+        }
+        .mainScript{
+            color:white;
+            font-size: 1.4em;
+        }
+        .box{
+            background-color: white;
+            border-radius: 10px;
+            flex: 1 1;
+            
+            height: 200px;
+            margin: 0px 10px 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.5em;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .right{
+            color:white;
+            font-style: italic;
+            font-size: 1.5em;
+            padding-top: 200px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .id{
+            background-image: url(C:\Users\com\test1\login_id.png);
+        }
+        .pw{
+            background-image: url(C:\Users\com\test1\login_password.png);
+        }
+        input{
+            border-radius: 30px;
+            border:none;
+            height: 45px;
+            width: 320px;
+            margin-bottom: 20px;
+            font-size: 0.8em;
+            background-position: 5px center;
+            background-image: url(C:\Users\com\test1\login_password.png);
+            outline: none;
+            padding-left: 20px;
+        }
+        .button{
+            height: 40px;
+            width: 220px;
+            color:white;
+            font-size: 0.7em;
+            background-color: orange;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div>
+                <img src="C:\Users\com\test1\likelion.png" alt="로고">
+            </div>
+            <div class="titleScript">
+                <h1>LIKE LION</h1>
+            </div>
+            <div class="mainScript">
+                우리는 '성장 의지를 가진 사람들을 돕기 위해' 존재합니다. 그리고 이들을 돕기 위한 가장 근본적이고 효과적인 방법은 교육이라고 생각합니다
+                <br><br>지금 바로 지원하세요!
+            </div>
+            <div class="part">
+                <div class="box">
+                    Plan
+                    <br>&
+                    <br>Design
+                </div>
+                <div class="box">
+                    Frontend
+                </div>
+                <div class="box">
+                    Backend
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h2>LOGIN</h2>
+            <form action="">
+                <div class="id">
+                    <input type="text" placeholder="        ID">
+                </div>
+                <div class="pw">
+                    <input type="text" placeholder="        PW">
+                </div>
+                <input class="button" type="submit" value="로그인 후 지원하기">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
