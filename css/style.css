@@ -1,0 +1,83 @@
+
+
+body{
+    background-color: black;
+    margin:0%;
+    padding:0%;
+}
+.container{
+    margin: 100px 80px 120px 80px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.part{
+    display: flex;
+    align-items: center;
+    margin-top: 1.5em;
+}
+img {
+    width: 30%;
+    height: 10%;
+}
+.titleScript{
+    color:white;
+    font-style: italic;
+    font-size: 1.5em;
+}
+.mainScript{
+    color:white;
+    font-size: 1.4em;
+}
+.box{
+    background-color: white;
+    border-radius: 10px;
+    flex: 1 1;
+    
+    height: 200px;
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.right{
+    color:white;
+    font-style: italic;
+    font-size: 1.5em;
+    padding-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.id{
+    background-image: url(../img/login_id.png);
+}
+.pw{
+    background-image: url(../img/login_password.png);
+}
+input{
+    border-radius: 30px;
+    border:none;
+    height: 45px;
+    width: 320px;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    background-position: 5px center;
+    background-image: url(../img/login_id.png);
+    outline: none;
+    padding-left: 20px;
+}
+.button{
+    height: 40px;
+    width: 220px;
+    color:white;
+    font-size: 0.7em;
+    background-color: orange;
+    margin-top: 20px;
+}
