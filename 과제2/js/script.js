@@ -116,10 +116,10 @@ function updateQuestion(){
         image.setAttribute('src', result[mbti].img)
     } else{
         pro.setAttribute('style', `width: calc(100/12*${num}%);`)
-        question.innerHTML = q[num.title]
-        type.innerHTML = q[num.type]
-        aBtn.innerHTML = q[num.A]
-        bBtn.innerHTML = q[num.B]
+        question.innerHTML = q[num].title
+        type.innerHTML = q[num].type
+        aBtn.innerHTML = q[num].A
+        bBtn.innerHTML = q[num].B
         num++
     }
 }
