@@ -114,10 +114,12 @@ function updateQuestion(){
         MBTI.innerHTML = mbti
         explain.innerHTML = result[mbti].explain
         image.setAttribute('src', result[mbti].img)
+    } else{
+        pro.setAttribute('style', `width: calc(100/12*${num}%);`)
+        question.innerHTML = q[num.title]
+        type.innerHTML = q[num.type]
+        aBtn.innerHTML = q[num.A]
+        bBtn.innerHTML = q[num.B]
+        num++
     }
-    question.innerHTML = q[num.title]
-    type.innerHTML = q[num.type]
-    aBtn.innerHTML = q[num.A]
-    bBtn.innerHTML = q[num.B]
-    num++
 }
