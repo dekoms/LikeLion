@@ -40,23 +40,23 @@ const result = {
     "ISTJ": {
         "animal": "곰", 
         "explain": "신중하고 신뢰할 수 있는 검사관형입니다. 현실적이고 조직적이며, 안정성과 안전을 중시합니다.", 
-        "img": "/img/bear.png"
+        "img": "./img/bear.png"
     },
-    "ISFJ": {"animal": "개", "explain": "섬세하고 책임감 있는 수호자형입니다. 신뢰할 만하며, 다른 사람들을 돌보고 지원합니다.", "img": "/img/dog.png"},
-    "INFJ": {"animal": "고양이", "explain": "이해심이 많고 통찰력 있는 옹호자형입니다. 신비로우며 독립적이며, 타인을 이해하고 지원합니다.", "img": "/img/cat.png"},
-    "INTJ": {"animal": "올빼미", "explain": "전략적이고 분석적인 고문계획가형입니다. 현명하고 논리적이며, 목표 달성을 위해 철저한 계획을 세웁니다.", "img": "/img/owl.png"},
-    "ISTP": {"animal": "호랑이", "explain": "독립적이고 탐구적인 조율자형입니다. 현실적이며 문제 해결에 능숙하며, 논리와 감각을 조화시킵니다.", "img": "/img/tiger.png"},
-    "ISFP": {"animal": "나무늘보", "explain": "평온하고 예술적인 예술가형입니다. 조용하고 고요한 분위기를 선호하며, 자연과 조화를 이루는 것을 즐깁니다.", "img": "/img/sloth.jpg"},
-    "INFP": {"animal": "나비", "explain": "이상적이고 온화한 중재자형입니다. 감성적이고 창의적이며, 내적 가치와 조화를 추구합니다.", "img": "/img/butterfly.jpg"},
-    "INTP": {"animal": "펭귄", "explain": "독립적이고 분석적인 사색가형입니다. 창의적이며 심층적인 사고를 가지며, 독특한 방식으로 문제를 해결합니다.", "img": "/img/penguin.jpg"},
-    "ESTP": {"animal": "물개", "explain": "활동적이고 탐험심이 강한 도전가형입니다. 즉흥적이고 사회적인 성향을 가지며, 문제 해결에 창의적입니다.", "img": "/img/seal.jpg"},
-    "ESFP": {"animal": "사슴", "explain": "사교적이고 재미있는 연예인형입니다. 활기차고 친근하며, 현재의 순간을 즐기고 다른 사람들을 웃게 합니다.", "img": "/img/deer.jpg"},
-    "ENFP": {"animal": "돌고래", "explain": "외향적이고 자유로운 탐험가형입니다. 사회적이며 열정적이며, 새로운 아이디어와 사람들과의 연결을 즐깁니다.", "img": "/img/dolphin.jpg"},
-    "ENTP": {"animal": "여우", "explain": "독창적이고 재기발랄한 변론가형입니다. 호기심이 많고 유연하며, 새로운 아이디어를 창출합니다.", "img": "/img/fox.jpg"},
-    "ESTJ": {"animal": "사자", "explain": "실질적이고 현실적인 지도자형입니다. 대담하고 결정력이 있으며, 사회적인 리더십을 가집니다.", "img": "/img/lion.jpg"},
-    "ESFJ": {"animal": "악어", "explain": "친절하고 사회적인 호스트형입니다. 다른 사람들을 배려하며 도움을 주는 동시에 보호자로서의 역할을 합니다.", "img": "/img/crocodile.jpg"},
-    "ENFJ": {"animal": "말", "explain": "사회적이고 친절한 교역형입니다. 다른 사람들을 돕고 영감을 주며, 긍정적인 영향을 미칩니다.", "img": "/img/horse.png"},
-    "ENTJ": {"animal": "독수리", "explain": "대담하고 목표 지향적인 지도자형입니다. 분석적이고 통찰력이 뛰어나며, 목표 달성을 위해 노력합니다.", "img": "/img/eagle.jpg"}
+    "ISFJ": {"animal": "개", "explain": "섬세하고 책임감 있는 수호자형입니다. 신뢰할 만하며, 다른 사람들을 돌보고 지원합니다.", "img": "./img/dog.png"},
+    "INFJ": {"animal": "고양이", "explain": "이해심이 많고 통찰력 있는 옹호자형입니다. 신비로우며 독립적이며, 타인을 이해하고 지원합니다.", "img": "./img/cat.png"},
+    "INTJ": {"animal": "올빼미", "explain": "전략적이고 분석적인 고문계획가형입니다. 현명하고 논리적이며, 목표 달성을 위해 철저한 계획을 세웁니다.", "img": "./img/owl.png"},
+    "ISTP": {"animal": "호랑이", "explain": "독립적이고 탐구적인 조율자형입니다. 현실적이며 문제 해결에 능숙하며, 논리와 감각을 조화시킵니다.", "img": "./img/tiger.png"},
+    "ISFP": {"animal": "나무늘보", "explain": "평온하고 예술적인 예술가형입니다. 조용하고 고요한 분위기를 선호하며, 자연과 조화를 이루는 것을 즐깁니다.", "img": "./img/sloth.jpg"},
+    "INFP": {"animal": "나비", "explain": "이상적이고 온화한 중재자형입니다. 감성적이고 창의적이며, 내적 가치와 조화를 추구합니다.", "img": "./img/butterfly.jpg"},
+    "INTP": {"animal": "펭귄", "explain": "독립적이고 분석적인 사색가형입니다. 창의적이며 심층적인 사고를 가지며, 독특한 방식으로 문제를 해결합니다.", "img": "./img/penguin.jpg"},
+    "ESTP": {"animal": "물개", "explain": "활동적이고 탐험심이 강한 도전가형입니다. 즉흥적이고 사회적인 성향을 가지며, 문제 해결에 창의적입니다.", "img": "./img/seal.jpg"},
+    "ESFP": {"animal": "사슴", "explain": "사교적이고 재미있는 연예인형입니다. 활기차고 친근하며, 현재의 순간을 즐기고 다른 사람들을 웃게 합니다.", "img": "./img/deer.jpg"},
+    "ENFP": {"animal": "돌고래", "explain": "외향적이고 자유로운 탐험가형입니다. 사회적이며 열정적이며, 새로운 아이디어와 사람들과의 연결을 즐깁니다.", "img": "./img/dolphin.jpg"},
+    "ENTP": {"animal": "여우", "explain": "독창적이고 재기발랄한 변론가형입니다. 호기심이 많고 유연하며, 새로운 아이디어를 창출합니다.", "img": "./img/fox.jpg"},
+    "ESTJ": {"animal": "사자", "explain": "실질적이고 현실적인 지도자형입니다. 대담하고 결정력이 있으며, 사회적인 리더십을 가집니다.", "img": "./img/lion.jpg"},
+    "ESFJ": {"animal": "악어", "explain": "친절하고 사회적인 호스트형입니다. 다른 사람들을 배려하며 도움을 주는 동시에 보호자로서의 역할을 합니다.", "img": "./img/crocodile.jpg"},
+    "ENFJ": {"animal": "말", "explain": "사회적이고 친절한 교역형입니다. 다른 사람들을 돕고 영감을 주며, 긍정적인 영향을 미칩니다.", "img": "./img/horse.png"},
+    "ENTJ": {"animal": "독수리", "explain": "대담하고 목표 지향적인 지도자형입니다. 분석적이고 통찰력이 뛰어나며, 목표 달성을 위해 노력합니다.", "img": "./img/eagle.jpg"}
 }
 
 
@@ -77,16 +77,16 @@ aBtn.addEventListener('click', () => {
             EI.setAttribute('value', e+1)
             break;
         case "SN":
-            let s = parseInt(EI.value)
-            EI.setAttribute('value', s+1)
+            let s = parseInt(SN.value)
+            SN.setAttribute('value', s+1)
             break;
         case "TF":
-            let t = parseInt(EI.value)
-            EI.setAttribute('value', t+1)
+            let t = parseInt(TF.value)
+            TF.setAttribute('value', t+1)
             break;
         case "JP":
-            let j = parseInt(EI.value)
-            EI.setAttribute('value', j+1)
+            let j = parseInt(JP.value)
+            JP.setAttribute('value', j+1)
             break;
     }
     updateQuestion()
@@ -101,10 +101,10 @@ function updateQuestion(){
         questionContainer.style.display = 'none'
         resultContainer.style.display = 'block'
 
-        EI.value > 2 ? mbti+='E' : mbti+='I'
-        SN.value > 2 ? mbti+='S' : mbti+='N'
-        TF.value > 2 ? mbti+='T' : mbti+='F'
-        JP.value > 2 ? mbti+='J' : mbti+='P'
+        EI.value > 1 ? mbti+='E' : mbti+='I'
+        SN.value > 1 ? mbti+='S' : mbti+='N'
+        TF.value > 1 ? mbti+='T' : mbti+='F'
+        JP.value > 1 ? mbti+='J' : mbti+='P'
 
         MBTI.innerHTML = mbti
         explain.innerHTML = result[mbti].explain
