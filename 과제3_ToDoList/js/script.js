@@ -9,6 +9,7 @@ const showActive = document.querySelector('.show-active-btn');
 const showCompleted = document.querySelector('.show-completed-btn');
 const clearAll = document.querySelector('.clear-all-btn');
 
+let list = [];
 let todos = []; // todo를 모아놓은 객체 배열 {id, content, isCompleted}
 let id = 1; // todo 객체의 id가 될 숫자
 
@@ -41,7 +42,6 @@ const getInputValue = () => {
     });
 };
 getInputValue()
-
 
 // 앞뒤 공백 제거 후, 빈 문자열이 아닐 경우 pushTodos() 실행
 const doTrimValue = (val) =>{ 
@@ -129,9 +129,13 @@ const paintFilterTodo = (todo) =>{
 
     completeAllBtn.addEventListener('click', () => completeAll());
 
-
-
+    list = [...todos];
+    showAll.addEventListener('click', () => showListAll());
+    showActive.addEventListener('click', () => showListActive());
+    showCompleted.addEventListener('click', () => showListCompleted());
     clearAll.addEventListener('click', () => removeAll());
+
+    console.log(list);
 };
 
 
@@ -211,8 +215,30 @@ const completeAll = () => {
     setLeftItems();
 }
 
+const showListAll = () => {
+    const newTodos = list;
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
+const showListActive = () => {
+    ////리스트의 각 요소에 접근하는 방법은??
+    const newTodos = getAllTodos().filter(() => list.currentvalue.isCompleted === false);
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
+const showListCompleted = () => {
+    const newTodos = getAllTodos().filter(() => list.currentvalue.isCompleted === true);
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
 const removeAll = () => {
-    const newTodos = [];
+    const newTodos = list = [];
     setTodos(newTodos);
     paintTodos();
     setLeftItems();
