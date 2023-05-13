@@ -1,3 +1,4 @@
+const currentTime = document.querySelector('.todo-title');
 const todoInputElement = document.querySelector('.todo-input');
 const todoEnterBtn = document.querySelector('.enter');
 const todoList = document.querySelector('.todo-list');
@@ -25,9 +26,9 @@ const getAllTodos = () => {
 }
 
 
-
 // 현재 input에 입력된 value를 가져와서 처리하는 함수 -> 키보드 enter, 버튼 클릭 2가지로 수행
 const getInputValue = () => {
+    completeAllBtn.addEventListener
     // todoInputElement에 'enter'키가 "keypress"됐을 때, doTrimValue() 실행
     todoInputElement.addEventListener('keypress', (e) =>{
         if(e.key === 'Enter'){
@@ -39,9 +40,7 @@ const getInputValue = () => {
         doTrimValue(todoInputElement.value);
     });
 };
-
-getInputValue();
-
+getInputValue()
 
 
 // 앞뒤 공백 제거 후, 빈 문자열이 아닐 경우 pushTodos() 실행
@@ -53,7 +52,8 @@ const doTrimValue = (val) =>{
     else{ // 빈 문자열이면
         alert("내용을 입력 후 클릭하세요"); // alert 창
     }
-    todoInputElement.value = ""; // input의 value 없애기
+    todoInputElement.value = ''; // input의 value 없애기
+
 };
 
 
@@ -75,35 +75,31 @@ const paintTodos = ()=>{
     // 지금까지 list에 있던 li 요소를 지운다
     todoList.innerHTML = null;
 
+    ////빈 todo리스트에 추가
     const allTodos = getAllTodos();
     allTodos.forEach(todo => paintFilterTodo(todo));
 };
 
 
-
+////todo에 리스트값 하나씩 순서대로 들어감
 const paintFilterTodo = (todo) =>{
     // 감싸줄 li 태그 생성, 클래스명 추가
-    const liElement = document.createElement('li');
+    let liElement = document.createElement('li');
+    ////<li>태그를 만들고 class명을 지정한 것임
     liElement.classList.add('todo-item');
-    // console.log(liElement);
-
-    // 현재 객체가 완료된 객체면 클래스로 checked 추가
-    if(todo.isCompleted){
-        liElement.classList.add('checked');
-    }
 
     // check button
-    const checkElement = document.createElement('button');
+    let checkElement = document.createElement('button');
     checkElement.classList.add('checkbox');
     checkElement.innerHTML = "✔︎";
 
     // content
-    const contentElement = document.createElement('div');
+    let contentElement = document.createElement('div');
     contentElement.classList.add('content');
     contentElement.innerHTML = todo.content;
 
     // delete button
-    const deleteElement = document.createElement('button');
+    let deleteElement = document.createElement('button');
     deleteElement.classList.add('delBtn');
     deleteElement.innerHTML = "✕";
     
@@ -115,15 +111,13 @@ const paintFilterTodo = (todo) =>{
     // ul 태그에 현재 li 태그 합치기
     todoList.appendChild(liElement);
 
-
-
     // content
-    contentElement = document.createElement('div');
-    contentElement.classList.add('content');
-    contentElement.innerHTML = todo.content;
+    // 이벤트 리스너 추가
     contentElement.addEventListener('dblclick', (e)=> dbclickTodo(e, todo.id));
 
-
+    // check button
+    // 이벤트 리스너 추가
+    checkElement.addEventListener('click', ()=> completeTodo(todo.id));
 
     // 현재 객체가 완료된 객체면 클래스로 checked 추가
     // 처음부터 써놓긴 했지만, 사실 이 때를 위한 코드였습니다.
@@ -131,12 +125,13 @@ const paintFilterTodo = (todo) =>{
         liElement.classList.add('checked');
     }
 
-    // check button
-    // 이벤트 리스너 추가
-    checkElement = document.createElement('button');
-    checkElement.classList.add('checkbox');
-    checkElement.innerHTML = "✔︎";
-    checkElement.addEventListener('click', ()=> completeTodo(todo.id));
+    deleteElement.addEventListener('click', ()=> removeTodo(todo.id));
+
+    completeAllBtn.addEventListener('click', () => completeAll());
+
+
+
+    clearAll.addEventListener('click', () => removeAll());
 };
 
 
@@ -160,7 +155,11 @@ const dbclickTodo = (e, todoId) => {
 
     const clickBody = (e) => {
         if(e.target !== inputElement){
+            ////Uncaught DOMException -> 삭제했던 자식 또 삭제하니까 발생
+            ////input태그만 자식이 아닌데? button이 있잖슴
             parentElement.removeChild(inputElement);
+            ////둘 다 똑같지 않나? append해보니 좀 다르네..
+            ////todoList.removeChild(inputElement);
         }
     }
 
@@ -176,9 +175,10 @@ const dbclickTodo = (e, todoId) => {
     });
 
     parentElement.appendChild(inputElement); // li 태그에 input 추가
-    document.body.addEventListener('click', clickBody); // body에 click 이벤트 추가
+    //document.body.addEventListener('click', clickBody); // body에 click 이벤트 추가
 }
 
+////리스트 순서는 어떻게 정렬되는거지???
 // todos 객체 배열에서 할일 수정
 const updateTodo = (content, todoId) => {
     const newTodos = getAllTodos().map(todo => todo.id === todoId ? {...todo, content} : todo );
@@ -187,10 +187,52 @@ const updateTodo = (content, todoId) => {
 }
 
 
-
+//// 체크표시할 때마다 리스트 삭제후 생성 및 총개수 나타내기
 const completeTodo = (todoId) => {
     const newTodos = getAllTodos().map(todo => (todo.id === todoId) ? {...todo, isCompleted : !todo.isCompleted} : todo);
     setTodos(newTodos);
     paintTodos();
     setLeftItems();
 };
+
+const removeTodo = (todoId) => {
+    const newTodos = getAllTodos().filter(todo => (todo.id !== todoId));
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
+const completeAll = () => {
+    const newTodos = getAllTodos().map(todos => (!isAllCompleted) ? {...todos, isCompleted : true} : {...todos, isCompleted : false});
+    if(!isAllCompleted) isAllCompleted = true
+    else isAllCompleted = false
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
+const removeAll = () => {
+    const newTodos = [];
+    setTodos(newTodos);
+    paintTodos();
+    setLeftItems();
+}
+
+
+function clock(){
+    const date = new Date();
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+
+    hh = (hh<10) ? "0"+hh : hh;
+    mm = (mm<10) ? "0"+mm : mm;
+    ss = (ss<10) ? "0"+ss : ss;
+
+    const time = hh + ":" + mm + ":" + ss;
+    currentTime.innerHTML = time;
+
+    setTimeout(() => clock(), 1000);
+}
+
+clock();
