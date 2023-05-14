@@ -29,7 +29,6 @@ const getAllTodos = () => {
 
 // 현재 input에 입력된 value를 가져와서 처리하는 함수 -> 키보드 enter, 버튼 클릭 2가지로 수행
 const getInputValue = () => {
-    completeAllBtn.addEventListener
     // todoInputElement에 'enter'키가 "keypress"됐을 때, doTrimValue() 실행
     todoInputElement.addEventListener('keypress', (e) =>{
         if(e.key === 'Enter'){
@@ -62,10 +61,10 @@ const doTrimValue = (val) =>{
 const pushTodos = (context) =>{
     const newId = id++; // 아이디 할당
     const newTodos = [...todos, { id : newId, content : context, isCompleted : false }]; // 새로운 객체 배열 만들기, spread operator
+    
     setTodos(newTodos); // setTodos()로 새로운 배열을 todos로 결정하기
-
     paintTodos(); // 갱신된 todos로 todo-list 작성하기
-		setLeftItems(); // 남은 할일 계산하기
+	setLeftItems(); // 남은 할일 계산하기
 }
 
 
@@ -129,13 +128,12 @@ const paintFilterTodo = (todo) =>{
 
     completeAllBtn.addEventListener('click', () => completeAll());
 
+    ////왜 [...todo]는 안되지???
     list = [...todos];
     showAll.addEventListener('click', () => showListAll());
     showActive.addEventListener('click', () => showListActive());
     showCompleted.addEventListener('click', () => showListCompleted());
     clearAll.addEventListener('click', () => removeAll());
-
-    console.log(list);
 };
 
 
@@ -207,7 +205,7 @@ const removeTodo = (todoId) => {
 }
 
 const completeAll = () => {
-    const newTodos = getAllTodos().map(todos => (!isAllCompleted) ? {...todos, isCompleted : true} : {...todos, isCompleted : false});
+    const newTodos = getAllTodos().map(todo => (!isAllCompleted) ? {...todo, isCompleted : true} : {...todo, isCompleted : false});
     if(!isAllCompleted) isAllCompleted = true
     else isAllCompleted = false
     setTodos(newTodos);
@@ -224,14 +222,14 @@ const showListAll = () => {
 
 const showListActive = () => {
     ////리스트의 각 요소에 접근하는 방법은??
-    const newTodos = getAllTodos().filter(() => list.currentvalue.isCompleted === false);
+    const newTodos = getAllTodos().forEach(todo => todo.isCompleted === false);
     setTodos(newTodos);
     paintTodos();
     setLeftItems();
 }
 
 const showListCompleted = () => {
-    const newTodos = getAllTodos().filter(() => list.currentvalue.isCompleted === true);
+    const newTodos = getAllTodos().filter(todo => todo.isCompleted === true);
     setTodos(newTodos);
     paintTodos();
     setLeftItems();
