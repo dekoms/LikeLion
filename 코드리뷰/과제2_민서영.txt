@@ -1,0 +1,14 @@
+민서영 코드리뷰
+
+ == 개선점 ==
+
+자바스크립트에 EI.value 삼항 연산자의 값이 2가 아니라 1이 되어야 한다
+
+자바스크립트 버튼 EI.value, SN.value, TF.value, JP.value
+
+버튼 회색 그림자 없애기
+-> 부트스트랩이 아닌 keypress, keydown 중에 이용해서 키를 땔 때 그림자가 사라지도록 하자. 부트스트랩의 설정이 keypress?인듯
+
+ == 해결하지 못한 점 ==
+
+progress-bar가 왜 되는지 모름.
